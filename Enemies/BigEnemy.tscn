@@ -16,7 +16,7 @@ params_billboard_keep_scale = true
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="SphereShape" id=4]
-radius = 3.59108
+radius = 3.90988
 
 [node name="Bob" type="KinematicBody" groups=["big", "enemy"]]
 script = ExtResource( 2 )
