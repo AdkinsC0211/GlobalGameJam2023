@@ -8,6 +8,8 @@ var input
 var speed = 10
 var velocity = Vector3.ZERO
 var target_velocity = Vector3.ZERO
+var damage = 1
+var health = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +23,10 @@ func _process(delta):
 	target_velocity = target_velocity.move_toward(input * speed, delta * 55)
 	velocity = target_velocity.rotated(Vector3.UP, $Camera.rotation.y)
 	move_and_slide(velocity)
+	if $Camera.speening:
+		for enemy in $Camera/weapon/AttackArea.get_overlapping_bodies():
+			if enemy.get("health") != null:
+				enemy.health -= delta * damage
+				if enemy.health <= 0:
+					enemy.queue_free()
+

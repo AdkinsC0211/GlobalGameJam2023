@@ -8,6 +8,7 @@ var mouse_sensitivity = 0.2
 var delt = 0
 var speen = 0
 var speening = false
+var lift = -30
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +16,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _process(delta):
+	$weapon.global_rotation.x = move_toward($weapon.global_rotation.x, deg2rad(lift), delta * 5)
 	if not speening:
 		speen -= delt * 100
 		if speen < 0:
@@ -42,5 +44,14 @@ func _unhandled_input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			speening = true
 			speen = 50
+			lift = -10
 		elif event.button_index == BUTTON_LEFT:
 			speening = false
+			lift = -35
+		elif event.button_index == BUTTON_RIGHT and event.pressed:
+			speening = true
+			speen = 50
+			lift = -60
+		elif event.button_index == BUTTON_RIGHT:
+			speening = false
+			lift = -35
