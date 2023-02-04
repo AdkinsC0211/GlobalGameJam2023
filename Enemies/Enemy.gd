@@ -14,6 +14,8 @@ var rng = RandomNumberGenerator.new()
 var isFrank = false
 var frankMat
 
+var health = null
+
 var small = false
 var medium = false
 var big = false
@@ -30,6 +32,10 @@ const SMALL_STRENGTH = 10
 const MED_STRENGTH = 20
 const BIG_STRENGTH = 30
 
+const SMALL_MAX_HEALTH = 1
+const MED_MAX_HEALTH = 2
+const BIG_MAX_HEALTH = 4
+
 const JUMP_HEIGHT = 5
 const JUMP_DURATION = 1
 
@@ -41,6 +47,7 @@ func _ready():
 	if is_in_group("small"):
 		small = true
 		speed = SMALL_SPEED
+		health = SMALL_MAX_HEALTH
 		frankMat = preload("res://Enemies/frank.tres")
 		var randNum = rng.randi_range(0,1)
 		if randNum == 1:
@@ -51,10 +58,12 @@ func _ready():
 	elif is_in_group("medium"):
 		medium = true
 		speed = MED_SPEED
+		health = MED_MAX_HEALTH
 		
 	elif is_in_group("big"):
 		big = true
 		speed = BIG_SPEED
+		health = BIG_MAX_HEALTH
 	
 	player = get_tree().get_nodes_in_group("player")[0]
 # Called every frame. 'delta' is the elapsed time since the previous frame.

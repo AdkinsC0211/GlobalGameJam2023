@@ -15,7 +15,7 @@ var dash_strength = 0
 var rev_step = 1
 var step_time = 0.8
 var step_timer = 0
-var inv_time = 0
+var inv_time = 1
 var inv_timer = 1
 
 # Called when the node enters the scene tree for the first time.
