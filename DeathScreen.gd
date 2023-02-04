@@ -16,13 +16,15 @@ func _ready():
 #	pass
 
 
-
-
-func _on_PlayButton_pressed():
+func _on_Play_Again_pressed():
 	get_tree().change_scene("res://PlayerSpawnTest.tscn")
 
+
+func _on_Main_Menu_pressed():
+	get_tree().change_scene("res://TitleSceen.tscn")
+	
 	
 
 
-func _on_QuitButton_pressed():
+func _on_Quit_Game_pressed():
 	get_tree().quit()
