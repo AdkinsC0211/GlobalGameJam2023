@@ -20,12 +20,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 current = true
 script = ExtResource( 2 )
 
-[node name="weed" type="MeshInstance" parent="Camera"]
-transform = Transform( -2.18557e-07, 0, -1, -1.2941, 0.193185, 1.13133e-08, 4.82963, 0.0517638, -4.2222e-08, 1, -1, -3 )
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
+[node name="weapon" type="Node" parent="Camera"]
 
-[node name="wack" type="MeshInstance" parent="Camera"]
-transform = Transform( 3, 0, 0, -3.55271e-15, 0.7, -4.77671e-16, 1.42109e-14, 1.49012e-08, 1, 1, -0.5, -5 )
+[node name="weed" type="MeshInstance" parent="Camera/weapon"]
+transform = Transform( -2.18557e-07, 0, -1, -1.2941, 0.193185, 1.13133e-08, 4.82963, 0.0517638, -4.2222e-08, 1, 1.5, -3 )
 mesh = SubResource( 2 )
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
+
+[node name="wack" type="MeshInstance" parent="Camera/weapon"]
+transform = Transform( 3, 8.88178e-16, 0, 0, 0.7, -4.7767e-16, 0, 1.49012e-08, 1, 1, 2, -5 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../..")
