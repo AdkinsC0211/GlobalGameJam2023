@@ -42,3 +42,9 @@ skeleton = NodePath("../../..")
 [node name="AttackCollision" type="CollisionShape" parent="Camera/weapon/AttackArea"]
 transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 2.5459, -4.4541 )
 shape = SubResource( 3 )
+
+[node name="HurtIndication" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.678431, 0.00784314, 0.00784314, 1 )
