@@ -24,11 +24,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$Camera/weapon/AttackArea/CPUParticles.set_emitting(false)
 	step_timer = clamp(step_timer - delta, 0, step_time)
 	inv_timer = clamp(inv_timer - delta, 0, inv_time)
 	
-	var dash_strength = Input.get_action_strength("ui_accept") * 7
-	input = Vector3(Input.get_axis("ui_left", "ui_right"), -0.1, Input.get_axis("ui_up", "ui_down") - dash_strength)
+	if Input.get_action_strength("ui_accept"):
+		speed = 20
+	else:
+		speed = 10
+	input = Vector3(Input.get_axis("ui_left", "ui_right"), -0.1, Input.get_axis("ui_up", "ui_down"))
 	if input != Vector3(0, -0.1, 0) and step_timer <= 0:
 		$stepSound.play()
 		step_timer = step_time
@@ -42,8 +46,12 @@ func _process(delta):
 		if not $weedWhackerAttack.playing and rev_step == 2:
 			$weedWhackerSustain.play()
 			rev_step = 3
+		if $Camera/weapon/AttackArea.get_overlapping_bodies().empty():
+			$weedWhackerSustain.pitch_scale = move_toward($weedWhackerSustain.pitch_scale, 1, delta)
 		for enemy in $Camera/weapon/AttackArea.get_overlapping_bodies():
 			if enemy.get("health") != null:
+				$weedWhackerSustain.pitch_scale = move_toward($weedWhackerSustain.pitch_scale, 0.8, delta)
+				$Camera/weapon/AttackArea/CPUParticles.set_emitting(true)
 				enemy.health -= delta * damage
 				if enemy.health <= 0:
 					enemy.queue_free()
