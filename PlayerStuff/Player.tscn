@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://PlayerStuff/player.gd" type="Script" id=1]
 [ext_resource path="res://PlayerStuff/cam.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://PlayerStuff/weedWhackerRelease.wav" type="AudioStream" id=8]
 [ext_resource path="res://PlayerStuff/weedWhackerAttack.wav" type="AudioStream" id=9]
 [ext_resource path="res://PlayerStuff/grass_step.wav" type="AudioStream" id=10]
+[ext_resource path="res://PlayerStuff/hurted.wav" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
@@ -92,5 +93,8 @@ stream = ExtResource( 8 )
 
 [node name="stepSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="hurted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="finished" from="weedWhackerSustain" to="." method="_on_weedWhackerSustain_finished"]

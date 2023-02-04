@@ -12,7 +12,7 @@
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0, 0.498039, 0.0666667, 1 )
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
 transform = Transform( 89.431, 0, 0, 0, 0.302091, 0, 0, 0, 89.431, 0, 0, 0 )

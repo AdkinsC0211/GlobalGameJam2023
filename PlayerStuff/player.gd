@@ -27,7 +27,7 @@ func _process(delta):
 	step_timer = clamp(step_timer - delta, 0, step_time)
 	inv_timer = clamp(inv_timer - delta, 0, inv_time)
 	
-	#var dash_strength = Input.get_action_strength("ui_accept") * 7
+	var dash_strength = Input.get_action_strength("ui_accept") * 7
 	input = Vector3(Input.get_axis("ui_left", "ui_right"), -0.1, Input.get_axis("ui_up", "ui_down") - dash_strength)
 	if input != Vector3(0, -0.1, 0) and step_timer <= 0:
 		$stepSound.play()
@@ -59,12 +59,14 @@ func _process(delta):
 
 func hit(damage):
 	if inv_timer <= 0:
+		$hurted.play()
 		health -= damage
 		target_velocity -= Vector3(0, 0, -30)
 		$HurtIndication.color = Color8(173, 2, 2, (255 - health))
 		inv_timer = inv_time
 		if health < 0:
-			get_tree().quit()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().change_scene("res://DavidsStash/DeathScreen.tscn")
 
 
 func _on_weedWhackerSustain_finished():
