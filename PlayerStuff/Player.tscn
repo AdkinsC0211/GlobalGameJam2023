@@ -1,12 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://PlayerStuff/player.gd" type="Script" id=1]
 [ext_resource path="res://PlayerStuff/cam.gd" type="Script" id=2]
+[ext_resource path="res://PlayerStuff/weedWhackerIdle.wav" type="AudioStream" id=3]
+[ext_resource path="res://PlayerStuff/pole_texture_ww.png" type="Texture" id=4]
+[ext_resource path="res://PlayerStuff/blade_texture_ww.png" type="Texture" id=5]
+[ext_resource path="res://PlayerStuff/bladecover_texture_ww.png" type="Texture" id=6]
+[ext_resource path="res://PlayerStuff/weedWhackerActive.ogg" type="AudioStream" id=7]
+[ext_resource path="res://PlayerStuff/weedWhackerRelease.wav" type="AudioStream" id=8]
+[ext_resource path="res://PlayerStuff/weedWhackerAttack.wav" type="AudioStream" id=9]
+[ext_resource path="res://PlayerStuff/grass_step.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
 
 [sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+albedo_texture = ExtResource( 6 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 2, 1, 1 )
@@ -22,20 +42,29 @@ shape = SubResource( 1 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 current = true
+far = 1000.0
 script = ExtResource( 2 )
 
 [node name="weapon" type="Spatial" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -1, 0 )
 
 [node name="weed" type="MeshInstance" parent="Camera/weapon"]
-transform = Transform( -2.18557e-07, 0, -1, -2.5, 0.173205, 2.18557e-08, 4.33013, 0.0999999, -3.78552e-08, 1, 1.2568, -2.02989 )
+transform = Transform( 4.37114e-09, -1.89276e-07, -1, -0.173205, -2.5, 0, -0.1, 4.33013, -4.37114e-08, 1, 1.2568, -2.02989 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../..")
+material/0 = SubResource( 4 )
 
 [node name="wack" type="MeshInstance" parent="Camera/weapon"]
-transform = Transform( 3, 8.88178e-16, 0, 0, 0.7, 0, 0, 4.47035e-08, 1, 1, 2.46577, -4.19705 )
+transform = Transform( 3, 0, 0, 0, 0.7, -6.38621e-08, 0, 4.47035e-08, 1, 1, 2.5, -4.2 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../..")
+material/0 = SubResource( 5 )
+
+[node name="guard" type="MeshInstance" parent="Camera/weapon"]
+transform = Transform( -0.5, -0.866025, 0, 0.836516, -0.482963, 0.258819, -0.224144, 0.12941, 0.965926, 0.801046, 2.18357, -4.18393 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 6 )
 
 [node name="AttackArea" type="Area" parent="Camera/weapon"]
 
@@ -48,3 +77,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color( 0.678431, 0.00784314, 0.00784314, 1 )
+
+[node name="weedWhackerIdle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="weedWhackerAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="weedWhackerSustain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="weedWhackerRelease" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="stepSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[connection signal="finished" from="weedWhackerSustain" to="." method="_on_weedWhackerSustain_finished"]
