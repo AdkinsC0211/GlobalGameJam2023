@@ -30,12 +30,12 @@ transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 66, 0.00144005, -0.00688899, 0.00
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="Area" type="Area" parent="."]
+[node name="Hitbox" type="Area" parent="."]
 transform = Transform( 1.01685, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Hitbox"]
 transform = Transform( 0.73663, 0, 0, 0, 1, 0, 0, 0, 0.750865, 0, 0, 0 )
 shape = SubResource( 4 )
 
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_Hitbox_body_exited"]

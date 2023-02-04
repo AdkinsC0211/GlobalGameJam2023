@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/hubert.tres" type="Material" id=2]
@@ -12,6 +12,9 @@ height = 0.002
 [sub_resource type="SphereShape" id=3]
 radius = 1.4242
 
+[sub_resource type="CylinderShape" id=4]
+radius = 7.10145
+
 [node name="HubertFrank" type="KinematicBody" groups=["enemy", "small"]]
 script = ExtResource( 1 )
 
@@ -24,12 +27,24 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.00144005, -0.00688899, 0.000
 mesh = SubResource( 2 )
 material/0 = ExtResource( 2 )
 
-[node name="Area" type="Area" parent="."]
+[node name="Hitbox" type="Area" parent="."]
 transform = Transform( 0.998965, 0, 0, 0, 0.998965, 0, 0, 0, 0.957445, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Hitbox"]
 transform = Transform( 0.948112, 0, 0, 0, 1, 0, 0, 0, 0.756051, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[node name="JumpDetection" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="JumpDetection"]
+shape = SubResource( 4 )
+
+[node name="GroundCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.964489, 0, 0, 0, 1, 0.00392926, -0.710332, 0.00361228 )
+enabled = true
+collide_with_areas = true
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_Hitbox_body_exited"]
+[connection signal="body_entered" from="JumpDetection" to="." method="_on_JumpDetection_body_entered"]
+[connection signal="body_exited" from="JumpDetection" to="." method="_on_JumpDetection_body_exited"]
