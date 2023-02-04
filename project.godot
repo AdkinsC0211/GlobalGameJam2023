@@ -11,7 +11,11 @@ config_version=4
 [application]
 
 config/name="Global Game Jam 2023"
+<<<<<<< HEAD
 run/main_scene="res://Test Scene.tscn"
+=======
+run/main_scene="res://TitleSceen.tscn"
+>>>>>>> origin/menu
 config/icon="res://icon.png"
 
 [autoload]
