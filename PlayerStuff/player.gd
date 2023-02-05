@@ -2,6 +2,7 @@ extends KinematicBody
 
 
 var kil_part = preload("res://PlayerStuff/juice.tscn")
+var pile = preload("res://PlayerStuff/ded.tscn")
 var input
 var speed = 10
 var velocity = Vector3.ZERO
@@ -55,8 +56,12 @@ func _process(delta):
 					var temp = kil_part.instance()
 					get_tree().get_root().add_child(temp)
 					temp.global_transform.origin = enemy.global_transform.origin
+					temp = pile.instance()
+					get_tree().get_root().add_child(temp)
+					temp.global_transform.origin = enemy.global_transform.origin
 					enemy.call_deferred("queue_free")
 					health = clamp(health + 50, 0, max_health)
+					$HurtIndication.color = Color8(173, 2, 2, (255 - health))
 					$kild.play()
 	else:
 		if rev_step == 3 or rev_step == 2:
@@ -76,6 +81,7 @@ func hit(damage):
 		inv_timer = inv_time
 		if health < 0:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().get_root().get_node("MusicManager").play_song = "death"
 			get_tree().change_scene("res://DavidsStash/DeathScreen.tscn")
 
 

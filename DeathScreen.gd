@@ -21,6 +21,7 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://MainMap.tscn")
+	get_tree().get_root().get_node("MusicManager").play_song = "game"
 	
 
 
@@ -33,3 +34,4 @@ func _on_QuitButton_pressed():
 
 func _on_MainMenuButton_pressed():
 	get_tree().change_scene("res://DavidsStash/TitleScreen2.tscn")
+	get_tree().get_root().get_node("MusicManager").play_song = "menu"
