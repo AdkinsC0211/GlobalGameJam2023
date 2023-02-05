@@ -22,7 +22,7 @@ radius = 3.26175
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.270705, 0, 0, 0, 0.398914, 0, 0, 0, 0.25416, 0, 0.147479, 0 )
+transform = Transform( 0.270705, 0, 0, 0, 0.372309, 0, 0, 0, 0.25416, 0, 0.147479, 0 )
 shape = SubResource( 1 )
 
 [node name="mesh" type="MeshInstance" parent="."]
@@ -36,6 +36,11 @@ transform = Transform( 1.01685, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Hitbox"]
 transform = Transform( 0.73663, 0, 0, 0, 1, 0, 0, 0, 0.750865, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="GroundCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.964489, 0, 0, 0, 1, 0.00392926, -1.63286, 0.00361228 )
+enabled = true
+collide_with_areas = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_Hitbox_body_exited"]
