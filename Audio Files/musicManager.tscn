@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Audio Files/The Wanderer - The Wind.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Audio Files/musicManager.gd" type="Script" id=2]
+[ext_resource path="res://Audio Files/Gigakoops - The Furcula Curse.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Audio Files/Lite Saturation - Nu Metal.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Audio Files/Gigakoops - KNIFE CRAYONS.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Audio Files/Gigakoops - Revenge from Behind the Grave.mp3" type="AudioStream" id=6]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="menu_theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
+
+[node name="game_theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+
+[node name="game_theme2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="game_theme3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="death_theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0

@@ -12,7 +12,7 @@ var velocity
 var rng = RandomNumberGenerator.new()
 
 var isFrank = false
-var frankMat
+onready var frankMat = preload("res://Enemies/frank.tres")
 
 var health = null
 var weight
@@ -21,6 +21,7 @@ var small = false
 var medium = false
 var big = false
 
+var greenery
 var player
 var playerLoc
 var playerInAttackRange = false
@@ -66,6 +67,7 @@ var isGrounded = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	greenery = find_parent("greenery")
 	rng.randomize()
 	timeOfNextLeap = 10
 	velocity = Vector3(0,0,0)
@@ -73,11 +75,7 @@ func _ready():
 		small = true
 		speed = SMALL_SPEED
 		health = SMALL_MAX_HEALTH
-		frankMat = preload("res://Enemies/frank.tres")
-		var randNum = rng.randi_range(0,1)
-		if randNum == 1:
-			isFrank = true
-			
+
 		if isFrank:
 			$mesh.set_material_override(frankMat)
 			speed /= 2
@@ -172,3 +170,6 @@ func _on_JumpDetection_body_entered(body):
 func _on_JumpDetection_body_exited(body):
 	if body.is_in_group("player"):
 		playerInPounceRange = false;
+		
+func _exit_tree():
+	greenery.killCount += 1

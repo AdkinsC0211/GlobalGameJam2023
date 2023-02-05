@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Gigakoops - KNIFE CRAYONS.mp3-852c24493cd9c86b30a8bb36e05d6a39.mp3str"
+
+[deps]
+
+source_file="res://Audio Files/Gigakoops - KNIFE CRAYONS.mp3"
+dest_files=[ "res://.import/Gigakoops - KNIFE CRAYONS.mp3-852c24493cd9c86b30a8bb36e05d6a39.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
