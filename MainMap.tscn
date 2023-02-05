@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://Map Textures/window1.png" type="Texture" id=1]
@@ -30,6 +31,29 @@ panorama = ExtResource( 16 )
 [sub_resource type="Environment" id=58]
 background_mode = 2
 background_sky = SubResource( 57 )
+=======
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Menu Objects/HealthLabel.gd" type="Script" id=2]
+[ext_resource path="res://Menu Objects/EnemyStats.gd" type="Script" id=3]
+[ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CylinderShape" id=5]
+
+[sub_resource type="SpatialMaterial" id=4]
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=6]
+material = SubResource( 4 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.613861, 0.756818 ), -1.56091, 0.0, 0, 0, Vector2( 0.990099, 0 ), -2.73458, 0.0, 0, 0 ]
+>>>>>>> Stashed changes
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.2088 )
@@ -43,8 +67,13 @@ albedo_texture = ExtResource( 21 )
 uv1_scale = Vector3( 3.028, 1.028, 0.878 )
 uv1_offset = Vector3( 0, 0.233, 0 )
 
-[sub_resource type="SpatialMaterial" id=21]
-albedo_texture = ExtResource( 6 )
+[sub_resource type="BoxShape" id=12]
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.247059, 0.141176, 0.113725, 1 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=54]
 flags_transparent = true
@@ -54,6 +83,7 @@ uv1_offset = Vector3( -1.072, 0, 0 )
 
 [sub_resource type="BoxShape" id=18]
 
+<<<<<<< Updated upstream
 [sub_resource type="SpatialMaterial" id=22]
 albedo_texture = ExtResource( 7 )
 
@@ -100,41 +130,14 @@ albedo_texture = ExtResource( 12 )
 flags_transparent = true
 albedo_texture = ExtResource( 18 )
 
+=======
+>>>>>>> Stashed changes
 [sub_resource type="BoxShape" id=19]
-
-[sub_resource type="SpatialMaterial" id=40]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=41]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=42]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=39]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=43]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=44]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=45]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=46]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=47]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=38]
-albedo_texture = ExtResource( 6 )
 
 [sub_resource type="BoxShape" id=20]
 extents = Vector3( 1.01632, 1, 1 )
 
+<<<<<<< Updated upstream
 [sub_resource type="SpatialMaterial" id=28]
 albedo_texture = ExtResource( 10 )
 
@@ -223,6 +226,49 @@ environment = SubResource( 58 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 138.312, 0.5, 246.309 )
+=======
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 170, 0.5, 203 )
+
+[node name="TestEnemy" type="RigidBody" parent="."]
+transform = Transform( 4.9, 0, 0, 0, 4.6656, 0, 0, 0, 4.9, 0.0176315, 3, -59.0386 )
+mode = 2
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TestEnemy"]
+transform = Transform( 0.204082, 0, 0, 0, 0.192901, 0, 0, 0, 0.204082, 0, 0, 1.19209e-07 )
+shape = SubResource( 5 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="TestEnemy/CollisionShape"]
+transform = Transform( 1, 0, 0, 0, -2.04, 6.99382e-08, 0, -2.3779e-07, -1, 0, 0, -4.29153e-06 )
+
+[node name="Label3D" type="Label3D" parent="TestEnemy"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0.385802, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CPUParticles" type="CPUParticles" parent="TestEnemy"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.643004, 0 )
+emitting = false
+amount = 50
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource( 6 )
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, -3, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
+scale_amount_curve = SubResource( 7 )
+color = Color( 0.729412, 0.509804, 0.109804, 0.988235 )
+>>>>>>> Stashed changes
 
 [node name="WorldFloor" type="StaticBody" parent="."]
 transform = Transform( 250, 0, 0, 0, 0.4, 0, 0, 0, 250, 0, 0, 0 )
@@ -275,10 +321,22 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, -4.44089e-16, 0, 1, 0, -5.68434e-14, 0, 1.2, 0, 0, 0 )
 material = SubResource( 76 )
 
+[node name="BeaveHouse" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="BeaveHouse"]
+transform = Transform( 28.0801, 0, 0, 0, 30.6455, 0, 0, 0, 31.4929, 198, 4, 242 )
+shape = SubResource( 12 )
+
+[node name="CSGSphere" type="CSGSphere" parent="BeaveHouse/CollisionShape"]
+material = SubResource( 14 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="BeaveHouse/CollisionShape"]
+transform = Transform( 0.191951, 0, 0, 0, 0.222172, 0, 0, 0, 0.186709, -0.534186, 0, -0.666818 )
+material = SubResource( 15 )
+
 [node name="GSLot" type="CSGBox" parent="."]
 transform = Transform( 45, 0, 0, 0, 1, 0, 0, 0, 32, 114, 0.4, -171 )
 height = 0.002
-material = SubResource( 21 )
 
 [node name="Road" type="CSGBox" parent="."]
 transform = Transform( 11.7, 0, 0, 0, 0.48, 0, 0, 0, 194.201, 171, 0, -33 )
@@ -316,44 +374,38 @@ transform = Transform( 1.5, 0, -1.44824e-08, 0, 2, 0, -4.74954e-08, 0, 0.9, 0.49
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/BigBox"]
-material = SubResource( 22 )
 
 [node name="Tower" type="CollisionShape" parent="LumberYard"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 2.0482, 0, 3.95795e-08, 0, 0.9, -0.600609, 1.36042, 0 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/Tower"]
-material = SubResource( 23 )
 
 [node name="Roof" type="CollisionShape" parent="LumberYard"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 2.926, 0, 3.95795e-08, 0, 0.9, -0.600609, 0.560171, 0 )
 shape = SubResource( 18 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="LumberYard/Roof"]
-transform = Transform( 1.28, 4.75862e-21, 2.79839e-08, -1.86556e-15, 1.2, 5.40741e-16, 9.17737e-08, 1.97148e-13, 2.43936, -0.618277, 0.929881, 1.20852 )
+transform = Transform( 1.28, 4.75862e-21, 2.79839e-08, -1.86556e-15, 1.2, 5.40741e-16, 9.17737e-08, 1.97148e-13, 2.43936, -0.618277, 0.98458, 1.20852 )
 polygon = PoolVector2Array( -0.5, 0, 0.5, 0.25, 1.5, 0 )
-material = SubResource( 24 )
 
 [node name="Overhang" type="CollisionShape" parent="LumberYard"]
 transform = Transform( 1, 0, -8.93084e-09, 0, 0.8, 0, -2.92888e-08, 0, 0.63, 0, 0.72022, 1.53553 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/Overhang"]
-material = SubResource( 25 )
 
 [node name="Stilt1" type="CollisionShape" parent="LumberYard"]
 transform = Transform( 0.024, 0, -7.59296e-10, 0, 1.3056, 0, 2.81291e-09, 0, 0.0378, -0.964671, -0.464, 2.11902 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/Stilt1"]
-material = SubResource( 26 )
 
 [node name="Stilt2" type="CollisionShape" parent="LumberYard"]
 transform = Transform( 0.024, 0, -7.59296e-10, 0, 1.3056, 0, 2.81291e-09, 0, 0.0378, 0.97, -0.464, 2.119 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/Stilt2"]
-material = SubResource( 27 )
 
 [node name="Window1" type="MeshInstance" parent="LumberYard"]
 transform = Transform( -1.31134e-08, 0, -1, 0, 0.6, 0, 0.3, 0, -4.37114e-08, -1.00617, 1.12559, -0.504677 )
@@ -417,8 +469,6 @@ transform = Transform( 25.308, 0, 0, 0, 53.1966, 0, 0, 0, 25.7711, -197.145, 50.
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/CollisionShape"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489, 0, 2.95278 )
-material = SubResource( 40 )
 
 [node name="Building2" type="StaticBody" parent="."]
 transform = Transform( 24.7111, 0, 0, 0, 15.19, 0, 0, 0, 15.8778, -66.1908, 15.4065, 11.663 )
@@ -427,7 +477,6 @@ transform = Transform( 24.7111, 0, 0, 0, 15.19, 0, 0, 0, 15.8778, -66.1908, 15.4
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/CollisionShape"]
-material = SubResource( 41 )
 
 [node name="Building3" type="StaticBody" parent="."]
 transform = Transform( 24.7111, 0, 0, 0, 24.7389, 0, 0, 0, 15.8778, -66.1908, 22.6553, 52.1066 )
@@ -436,7 +485,6 @@ transform = Transform( 24.7111, 0, 0, 0, 24.7389, 0, 0, 0, 15.8778, -66.1908, 22
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/CollisionShape"]
-material = SubResource( 42 )
 
 [node name="Building4" type="StaticBody" parent="."]
 transform = Transform( 29.792, 0, 0, 0, 24.7389, 0, 0, 0, 37.5644, 1.2283, 22.6553, 32.25 )
@@ -445,7 +493,10 @@ transform = Transform( 29.792, 0, 0, 0, 24.7389, 0, 0, 0, 37.5644, 1.2283, 22.65
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building4/CollisionShape"]
+<<<<<<< Updated upstream
 material = SubResource( 39 )
+=======
+>>>>>>> Stashed changes
 
 [node name="Building5" type="StaticBody" parent="."]
 transform = Transform( 47.1506, 0, 0, 0, 24.7389, 0, 0, 0, 47.7061, 106.668, 22.6553, 22.4083 )
@@ -454,16 +505,14 @@ transform = Transform( 47.1506, 0, 0, 0, 24.7389, 0, 0, 0, 47.7061, 106.668, 22.
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building5/CollisionShape"]
-material = SubResource( 43 )
 
-[node name="Grocery Store" type="StaticBody" parent="."]
-transform = Transform( -1.30185e-06, 0, 59.8439, 0, 12.4613, 0, -29.7828, 0, -2.61586e-06, 5.02745, 12.8501, -171.291 )
+[node name="Building6" type="StaticBody" parent="."]
+transform = Transform( 68.8563, 0, 0, 0, 24.7389, 0, 0, 0, 27.7055, -2.97255, 21.0233, -169.291 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Grocery Store"]
+[node name="CollisionShape" type="CollisionShape" parent="Building6"]
 shape = SubResource( 19 )
 
-[node name="store" parent="Grocery Store" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, -0.616, 0, 1, 0, 1, 0, -2.69262e-08, 0.134305, 0, -0.0835507 )
+[node name="CSGBox" type="CSGBox" parent="Building6/CollisionShape"]
 
 [node name="Building7" type="StaticBody" parent="."]
 transform = Transform( 19.9283, 0, 0, 0, 50.9726, 0, 0, 0, 15.8778, -66.1908, 15.4065, -97.5054 )
@@ -472,7 +521,6 @@ transform = Transform( 19.9283, 0, 0, 0, 50.9726, 0, 0, 0, 15.8778, -66.1908, 15
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building7/CollisionShape"]
-material = SubResource( 44 )
 
 [node name="Building8" type="StaticBody" parent="."]
 transform = Transform( 29.7211, 0, 0, 0, 18.7593, 0, 0, 0, 15.8778, -0.763123, 15.4065, -97.5054 )
@@ -481,7 +529,6 @@ transform = Transform( 29.7211, 0, 0, 0, 18.7593, 0, 0, 0, 15.8778, -0.763123, 1
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building8/CollisionShape"]
-material = SubResource( 45 )
 
 [node name="Building9" type="StaticBody" parent="."]
 transform = Transform( 12.8714, 0, 0, 0, 19.8228, 0, 0, 0, 20.5561, -74.6055, 15.4065, -52.4721 )
@@ -490,7 +537,6 @@ transform = Transform( 12.8714, 0, 0, 0, 19.8228, 0, 0, 0, 20.5561, -74.6055, 15
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building9/CollisionShape"]
-material = SubResource( 46 )
 
 [node name="Building10" type="StaticBody" parent="."]
 transform = Transform( 37.6586, 0, 0, 0, 19.8228, 0, 0, 0, 20.5561, -7.00625, 15.4065, -54.845 )
@@ -499,745 +545,888 @@ transform = Transform( 37.6586, 0, 0, 0, 19.8228, 0, 0, 0, 20.5561, -7.00625, 15
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building10/CollisionShape"]
+<<<<<<< Updated upstream
 material = SubResource( 47 )
+=======
+>>>>>>> Stashed changes
 
 [node name="CSGTorus" type="CSGTorus" parent="."]
 transform = Transform( 16.7552, 0, 0, 0, 1, 0, 0, 0, 14.868, 108, 0, -71 )
-material = SubResource( 38 )
 
 [node name="Market Stall" type="StaticBody" parent="."]
-transform = Transform( 0.897851, 0, -0.440299, 0, 1.47006, 0, 0.440299, 0, 0.897851, 140.801, 3.04321, -70.1918 )
+transform = Transform( 0.629646, 0, -0.776882, 0, 1, 0, 0.776882, 0, 0.629646, 132.229, 2.20672, -50.005 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 4.76837e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49692, -7.41898, 0 )
 material = SubResource( 60 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall2" type="StaticBody" parent="."]
-transform = Transform( 0.937913, 0, -0.34687, 0, 1.47006, 0, 0.34687, 0, 0.937913, 138.518, 3.04321, -59.502 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 139.378, 2.20672, -74.8861 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall2"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 0, 0, 7.83842, 0, -5.21541e-08, 0, 1, 1.49744, -7.18242, -1.71661e-05 )
 material = SubResource( 61 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall2/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall2/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall2/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall2/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall3" type="StaticBody" parent="."]
-transform = Transform( 0.629646, 0, -0.776882, 0, 1.47006, 0, 0.776882, 0, 0.629646, 132.229, 3.04321, -50.005 )
+transform = Transform( 0.929886, 0, -0.367849, 0, 1, 0, 0.367849, 0, 0.929886, 137.903, 2.20672, -60.7683 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall3"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -5.96046e-08, 0, 1, 1.49688, -7.41898, 0 )
 material = SubResource( 62 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall3/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall3/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall3/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall3/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall4" type="StaticBody" parent="."]
-transform = Transform( 0.371724, 0, -0.928343, 0, 1.47006, 0, 0.928343, 0, 0.371724, 119.716, 3.04321, -43.8735 )
+transform = Transform( 0.867323, 0, 0.497746, 0, 1, 0, -0.497746, 0, 0.867323, 134.747, 2.20672, -86.3293 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall4"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
 material = SubResource( 63 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall4/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall4/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall4/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall4/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall5" type="StaticBody" parent="."]
-transform = Transform( -0.308701, 0, -0.951159, 0, 1.47006, 0, 0.951159, 0, -0.308701, 110.967, 3.04321, -45.2884 )
+transform = Transform( -0.394263, 0, -0.918998, 0, 1, 0, 0.918998, 0, -0.394263, 91.6535, 2.20672, -46.9247 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall5"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall5/Roof"]
-transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
-material = SubResource( 33 )
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall5/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall5/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall5/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall5/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 
 [node name="Market Stall6" type="StaticBody" parent="."]
-transform = Transform( 0.446573, 0, -0.894747, 0, 1.47006, 0, 0.894747, 0, 0.446573, 101.44, 3.04321, -44.9581 )
+transform = Transform( 0.443666, 0, -0.896192, 0, 1, 0, 0.896192, 0, 0.443666, 108.717, 2.20672, -41.6642 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall6"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 0, 0, 7.83842, 0, -5.21541e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 64 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall6/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall6/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall6/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall6/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall7" type="StaticBody" parent="."]
-transform = Transform( -0.60311, 0, -0.797658, 0, 1.47006, 0, 0.797658, 0, -0.60311, 89.7675, 3.04321, -46.6855 )
+transform = Transform( -0.0440379, 0, 0.99903, 0, 1, 0, -0.99903, 0, -0.0440379, 127.79, 2.20672, -93.983 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall7"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49687, -7.41898, 9.53674e-07 )
 material = SubResource( 65 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall7/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall7/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall7/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall7/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall8" type="StaticBody" parent="."]
-transform = Transform( -0.983388, 0, -0.181515, 0, 1.47006, 0, 0.181515, 0, -0.983388, 82.863, 3.04321, -52.7916 )
+transform = Transform( -0.15321, 0, -0.988194, 0, 1, 0, 0.988194, 0, -0.15321, 122.401, 2.20672, -46.6531 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall8"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 1.19209e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49689, -7.41898, 9.53674e-07 )
 material = SubResource( 68 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall8/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall8/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall8/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall8/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall9" type="StaticBody" parent="."]
-transform = Transform( -0.429313, 0, -0.903156, 0, 1.47006, 0, 0.903156, 0, -0.429313, 77.3748, 3.04321, -63.9558 )
+transform = Transform( 0.441913, 0, -0.897058, 0, 1, 0, 0.897058, 0, 0.441913, 113.648, 2.20672, -48.0101 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall9"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -3.72529e-08, 0, 1, 1.49687, -7.41898, -9.53674e-07 )
 material = SubResource( 69 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall9/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall9/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall9/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall9/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall10" type="StaticBody" parent="."]
-transform = Transform( -0.879075, 0, 0.476683, 0, 1.47006, 0, -0.476683, 0, -0.879075, 75.3819, 3.04321, -75.2357 )
+transform = Transform( 0.379117, 0, 0.925349, 0, 1, 0, -0.925349, 0, 0.379117, 117.001, 2.20672, -97.4863 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall10"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall10/Roof"]
-transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
-material = SubResource( 33 )
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall10/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall10/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall10/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall10/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 
 [node name="Market Stall11" type="StaticBody" parent="."]
-transform = Transform( -0.998275, 0, -0.0587144, 0, 1.47006, 0, 0.0587144, 0, -0.998275, 79.5319, 3.04321, -83.6746 )
+transform = Transform( -0.413168, 0, 0.910655, 0, 1, 0, -0.910655, 0, -0.413168, 98.7016, 2.20672, -95.591 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall11"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall11/Roof"]
-transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
-material = SubResource( 33 )
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall11/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall11/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall11/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall11/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 
 [node name="Market Stall12" type="StaticBody" parent="."]
-transform = Transform( 0.14484, 0, -0.989455, 0, 1.47006, 0, 0.989455, 0, 0.14484, 92.0207, 3.04321, -94.7668 )
+transform = Transform( -0.217735, 0, 0.976008, 0, 1, 0, -0.976008, 0, -0.217735, 108.768, 2.20672, -100.214 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall12"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 70 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall12/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall12/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall12/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall12/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall13" type="StaticBody" parent="."]
-transform = Transform( -0.429313, 0, -0.903156, 0, 1.47006, 0, 0.903156, 0, -0.429313, 111.384, 3.04321, -99.716 )
+transform = Transform( -0.866287, 0, 0.499547, 0, 1, 0, -0.499547, 0, -0.866287, 82.5324, 2.20672, -88.2549 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall13"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -3.72529e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 71 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall13/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall13/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall13/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall13/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall14" type="StaticBody" parent="."]
-transform = Transform( -0.961271, 0, -0.275604, 0, 1.47006, 0, 0.275604, 0, -0.961271, 123.601, 3.04321, -93.1503 )
+transform = Transform( 0.10675, 0, 0.994286, 0, 1, 0, -0.994286, 0, 0.10675, 88.3237, 2.20672, -94.235 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall14"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall14/Roof"]
-transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
-material = SubResource( 33 )
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall14/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall14/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall14/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall14/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 
 [node name="Market Stall15" type="StaticBody" parent="."]
-transform = Transform( 0.0835563, 0, -0.996503, 0, 1.47006, 0, 0.996503, 0, 0.0835563, 131.788, 3.04321, -89.705 )
+transform = Transform( -0.973227, 0, 0.229846, 0, 1, 0, -0.229846, 0, -0.973227, 76.297, 2.20672, -77.2636 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall15"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49687, -7.41898, 0 )
 material = SubResource( 66 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall15/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall15/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall15/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall15/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
 
 [node name="Market Stall16" type="StaticBody" parent="."]
-transform = Transform( -0.693766, 0, -0.7202, 0, 1.47006, 0, 0.7202, 0, -0.693766, 137.513, 3.04321, -81.373 )
+transform = Transform( -0.974714, 0, -0.223454, 0, 1, 0, 0.223454, 0, -0.974714, 75.2268, 2.20672, -67.2004 )
 
 [node name="Base" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Base"]
-material = SubResource( 28 )
 
 [node name="Pole1" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Pole1"]
-material = SubResource( 29 )
 
 [node name="Pole2" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Pole2"]
-material = SubResource( 30 )
 
 [node name="Pole3" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Pole3"]
-material = SubResource( 31 )
 
 [node name="Pole4" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
 shape = SubResource( 20 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Pole4"]
-material = SubResource( 32 )
 
 [node name="Roof" type="CollisionShape" parent="Market Stall16"]
 transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall16/Roof"]
+<<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
 material = SubResource( 33 )
 
@@ -1344,3 +1533,122 @@ shape = SubResource( 80 )
 transform = Transform( 2.1, 0, 0, 0, -3.3, 2.97214e-07, 0, -3.52068e-07, -1, 0, 0, 0 )
 mesh = SubResource( 78 )
 material/0 = SubResource( 81 )
+=======
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall16/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall16/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall16/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall16/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+
+[node name="Market Stall17" type="StaticBody" parent="."]
+transform = Transform( -0.974714, 0, -0.223454, 0, 1, 0, 0.223454, 0, -0.974714, 85.3768, 2.20672, -52.0876 )
+
+[node name="Base" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Base"]
+
+[node name="Pole1" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Pole1"]
+
+[node name="Pole2" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Pole2"]
+
+[node name="Pole3" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Pole3"]
+
+[node name="Pole4" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Pole4"]
+
+[node name="Roof" type="CollisionShape" parent="Market Stall17"]
+transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
+shape = SubResource( 18 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall17/Roof"]
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall17/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall17/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall17/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall17/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+
+[node name="Market Stall18" type="StaticBody" parent="."]
+transform = Transform( -0.685882, 0, -0.727713, 0, 1, 0, 0.727713, 0, -0.685882, 80.6409, 2.20672, -59.3908 )
+
+[node name="Base" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.936448, 0, 0, 0, 0.747758, 0, 0, 0, 3.16572, 0, -1.11797, 0 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Base"]
+
+[node name="Pole1" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, 2.97227 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Pole1"]
+
+[node name="Pole2" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.713112, 0.721976, 2.97227 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Pole2"]
+
+[node name="Pole3" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, -0.636505, 0.721976, -2.9957 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Pole3"]
+
+[node name="Pole4" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.166313, 0, 0, 0, 1.28079, 0, 0, 0, 0.140544, 0.727684, 0.721976, -2.99213 )
+shape = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Pole4"]
+
+[node name="Roof" type="CollisionShape" parent="Market Stall18"]
+transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.25104, -0.600609, 2.04677, -0.0542831 )
+shape = SubResource( 18 )
+
+[node name="CSGBox" type="CSGBox" parent="Market Stall18/Roof"]
+transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
+
+[node name="CSGBox4" type="CSGBox" parent="Market Stall18/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -8.87223, -0.991468 )
+
+[node name="CSGBox5" type="CSGBox" parent="Market Stall18/Roof"]
+transform = Transform( -9.97849e-08, -0.102624, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39771e-08, 4.51312e-09, 1, -0.741501, -8.07471, 0.00270081 )
+
+[node name="CSGBox6" type="CSGBox" parent="Market Stall18/Roof"]
+transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e-09, 8.28525, -9.37476e-08, -0.0126266, -4.37114e-08, 1.38794, -7.7304, 0.991262 )
+
+[node name="CSGBox7" type="CSGBox" parent="Market Stall18/Roof"]
+transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
+>>>>>>> Stashed changes
