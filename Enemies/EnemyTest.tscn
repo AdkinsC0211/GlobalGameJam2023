@@ -15,7 +15,7 @@ albedo_color = Color( 0, 0.498039, 0.0666667, 1 )
 [node name="Spatial2" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 89.431, 0, 0, 0, 0.302091, 0, 0, 0, 89.431, 0, 0, 0 )
+transform = Transform( 241.427, 0, 0, 0, 0.302091, 0, 0, 0, 241.427, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 1 )
@@ -26,13 +26,13 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0814, 1.64434, 63.6295 )
-
-[node name="HubertFrank" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54504, 23.5996, -3.43762 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0825, 1.64434, 79.165 )
 
 [node name="Jeff" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5982, 2.72674, 34.2431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5982, 11.0708, 34.2431 )
+
+[node name="HubertFrank" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8609, 9.17182, 36.2161 )
 
 [node name="Bob" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26429, 4.61424, 40.6618 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6166, 5.4874, -17.5861 )

@@ -25,6 +25,9 @@ var player
 var playerLoc
 var playerInAttackRange = false
 var playerInPounceRange = false
+var timeOfNextLeap
+const JUMP_WAIT_LOWER = 1
+const JUMP_WAIT_UPPER = 10
 
 const SMALL_SPEED = 8
 const MED_SPEED = 5
@@ -41,6 +44,10 @@ const BIG_MAX_HEALTH = 4
 const JUMP_V_POWER_FRANK = 17
 const JUMP_H_SPEED_FRANK = 3
 const JUMP_DURATION_FRANK = 0.5
+
+const JUMP_V_POWER_JEFF = 12
+const JUMP_H_SPEED_JEFF = 5
+const JUMP_DURATION_JEFF = 1
 
 const JUMP_V_POWER_BOB = 20
 const JUMP_H_SPEED_BOB = 3
@@ -60,6 +67,7 @@ var isGrounded = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
+	timeOfNextLeap = 10
 	velocity = Vector3(0,0,0)
 	if is_in_group("small"):
 		small = true
@@ -104,7 +112,6 @@ func _process(delta):
 				isGrounded = true
 		else:
 			isGrounded = false
-	
 	target = Vector3(player.translation.x, 0, player.translation.z)
 	direction = (target-translation).normalized() 
 	setVelocityBasedOnAction()
@@ -131,6 +138,18 @@ func setVelocityBasedOnAction():
 	elif(big and isJumping):
 		if(((Time.get_ticks_msec()-timeLeftGround)/1000.0) >= JUMP_DURATION_BOB):
 			isJumping = false
+	elif(medium and isGrounded and (Time.get_ticks_msec()/1000.0) >= timeOfNextLeap):
+			if(!isJumping):
+				timeLeftGround = Time.get_ticks_msec()
+				isJumping = true
+				velocity.y = GRAVITY + JUMP_V_POWER_JEFF
+				velocity.x *= JUMP_H_SPEED_JEFF
+				velocity.z *= JUMP_H_SPEED_JEFF
+	elif(medium and isJumping):
+		if(((Time.get_ticks_msec()-timeLeftGround)/1000.0) >= JUMP_DURATION_JEFF):
+			timeOfNextLeap = (Time.get_ticks_msec()/1000) + rng.randf_range(JUMP_WAIT_LOWER, JUMP_WAIT_UPPER)
+			isJumping = false
+		
 	elif (!isJumping):
 		velocity = Vector3(direction.x * speed, GRAVITY - weight, direction.z * speed) #Normal Moving
 
