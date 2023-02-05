@@ -1,4 +1,4 @@
-extends Node2D
+extends Label
 
 
 # Declare member variables here. Examples:
@@ -12,13 +12,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _on_PlayButton_pressed():
-	get_tree().change_scene("res://MainMap.tscn")
-
-
-
-func _on_QuitButton_pressed():
-	get_tree().quit()
+func _process(delta):
+	var change = get_tree().change_scene("res://Test Scene.tscn")

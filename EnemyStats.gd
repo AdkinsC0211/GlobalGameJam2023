@@ -1,9 +1,12 @@
-extends Node2D
+extends RigidBody
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+export var HealthTotal = 10
+export var HealthRemaining = 10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,19 +18,3 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-
-
-func _on_PlayAgainButton_pressed():
-	get_tree().change_scene("res://MainMap.tscn")
-
-
-
-func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://DavidsStash/TitleSceen.tscn")
-	
-
-
-
-func _on_QuitButtonButton_pressed():
-	get_tree().quit()

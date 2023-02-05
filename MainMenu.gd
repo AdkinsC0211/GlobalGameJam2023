@@ -18,16 +18,11 @@ func _ready():
 
 
 
-func _on_PlayAgainButton_pressed():
-	get_tree().change_scene("res://MainMap.tscn")
+func _on_PlayButton_pressed():
+	get_tree().change_scene("res://PlayerSpawnTest.tscn")
 
-
-
-func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://DavidsStash/TitleSceen.tscn")
 	
 
 
-
-func _on_QuitButtonButton_pressed():
+func _on_QuitButton_pressed():
 	get_tree().quit()

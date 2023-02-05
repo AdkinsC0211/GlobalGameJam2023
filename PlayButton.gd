@@ -14,20 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-
-
-func _on_PlayAgainButton_pressed():
-	get_tree().change_scene("res://MainMap.tscn")
-
-
-
-func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://DavidsStash/TitleSceen.tscn")
-	
-
-
-
-func _on_QuitButtonButton_pressed():
-	get_tree().quit()

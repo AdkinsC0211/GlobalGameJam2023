@@ -1,10 +1,14 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+<<<<<<< Updated upstream:TitleSceen.tscn
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+=======
 [ext_resource path="res://DavidsStash/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://art/sign_button_hover.png" type="Texture" id=3]
 [ext_resource path="res://art/sign_button.png" type="Texture" id=4]
 [ext_resource path="res://art/sign_button_pressed.png" type="Texture" id=6]
+>>>>>>> Stashed changes:DavidsStash/TitleSceen.tscn
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -56,6 +60,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+<<<<<<< Updated upstream:TitleSceen.tscn
+[connection signal="pressed" from="PlayButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+=======
 [node name="Label" type="Label" parent="QuitButton"]
 margin_left = 192.0
 margin_right = 225.0
@@ -86,4 +94,5 @@ margin_bottom = 602.0
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_TextureButton_pressed"]
+>>>>>>> Stashed changes:DavidsStash/TitleSceen.tscn
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
