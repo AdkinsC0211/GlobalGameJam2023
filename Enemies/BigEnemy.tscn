@@ -36,5 +36,10 @@ material/0 = SubResource( 3 )
 transform = Transform( 0.645593, 0, 0, 0, 1.14972, 0, 0, 0, 0.802674, 0, 0, 0 )
 shape = SubResource( 4 )
 
+[node name="GroundCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.964489, 0, 0, 0, 1, 0.00392926, -2.32632, 0.00361228 )
+enabled = true
+collide_with_areas = true
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_Hitbox_body_exited"]
