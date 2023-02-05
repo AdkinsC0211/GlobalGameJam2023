@@ -1436,13 +1436,13 @@ shape = SubResource( 72 )
 mesh = SubResource( 70 )
 material/0 = SubResource( 71 )
 
-[node name="bigTree2" type="StaticBody" parent="."]
+[node name="regularTree" type="StaticBody" parent="."]
 transform = Transform( 13, 0, 0, 0, 25, 0, 0, 0, 13, -53.8523, 12.8831, -44.0852 )
 
-[node name="CollisionShape" type="CollisionShape" parent="bigTree2"]
+[node name="CollisionShape" type="CollisionShape" parent="regularTree"]
 shape = SubResource( 72 )
 
-[node name="MeshInstance" type="MeshInstance" parent="bigTree2"]
+[node name="MeshInstance" type="MeshInstance" parent="regularTree"]
 mesh = SubResource( 70 )
 material/0 = SubResource( 71 )
 

@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/TitleSceenImage.png" type="Texture" id=1]
+[ext_resource path="res://DavidsStash/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://art/sign_button_hover.png" type="Texture" id=3]
+[ext_resource path="res://art/sign_button.png" type="Texture" id=4]
+[ext_resource path="res://art/sign_button_pressed.png" type="Texture" id=5]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackGround" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1428.0
+margin_bottom = 1103.0
+rect_scale = Vector2( 0.42, 0.36 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = -68.0
+margin_right = 1289.0
+margin_bottom = 801.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayButton"]
+margin_left = 128.0
+margin_top = 106.667
+margin_right = 163.0
+margin_bottom = 120.667
+rect_scale = Vector2( 35, 61 )
+text = "PLAY "
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 424.0
+margin_top = 384.0
+margin_right = 1801.0
+margin_bottom = 1253.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/QuitButton"]
+margin_left = 192.0
+margin_right = 225.0
+margin_bottom = 14.0
+rect_scale = Vector2( 30, 61 )
+text = "QUIT"
+
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer"]
+anchor_right = 0.679
+margin_left = 800.0
+margin_top = 500.0
+margin_right = 1604.7
+margin_bottom = 1369.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/CreditsButton"]
+margin_left = 40.0
+margin_right = 92.0
+margin_bottom = 14.0
+rect_scale = Vector2( 25.034, 61 )
+text = "CREDITS"
+
+[node name="Title Bar" type="TextureRect" parent="CanvasLayer"]
+margin_left = 336.0
+margin_right = 1713.0
+margin_bottom = 869.0
+rect_scale = Vector2( 0.25, 0.125 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Title Bar"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 146.0
+margin_bottom = 78.0
+rect_scale = Vector2( 15, 61 )
+text = "ROOT FORCE"
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_CreditsButton_pressed"]

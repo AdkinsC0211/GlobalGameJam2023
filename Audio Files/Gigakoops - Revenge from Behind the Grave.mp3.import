@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Gigakoops - Revenge from Behind the Grave.mp3-9d71e3e3c3b1542a3bed161f05dffe97.mp3str"
+
+[deps]
+
+source_file="res://Audio Files/Gigakoops - Revenge from Behind the Grave.mp3"
+dest_files=[ "res://.import/Gigakoops - Revenge from Behind the Grave.mp3-9d71e3e3c3b1542a3bed161f05dffe97.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

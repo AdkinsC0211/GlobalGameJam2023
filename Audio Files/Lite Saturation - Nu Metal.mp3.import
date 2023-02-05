@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Lite Saturation - Nu Metal.mp3-2201bc3b7a3e0476f93550ee3c3cbce6.mp3str"
+
+[deps]
+
+source_file="res://Audio Files/Lite Saturation - Nu Metal.mp3"
+dest_files=[ "res://.import/Lite Saturation - Nu Metal.mp3-2201bc3b7a3e0476f93550ee3c3cbce6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

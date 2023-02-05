@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://DeathScreen.gd" type="Script" id=1]
+=======
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://DeathScreen.gd" type="Script" id=1]
+[ext_resource path="res://art/sign_button.png" type="Texture" id=2]
+[ext_resource path="res://art/sign_button_pressed.png" type="Texture" id=3]
+[ext_resource path="res://art/sign_button_hover.png" type="Texture" id=4]
+[ext_resource path="res://art/DeathScreenImage.png" type="Texture" id=5]
+>>>>>>> c65d46aa6fbc77c295be739cf3c6bf3077306a6e
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 300 )
 
@@ -40,3 +51,96 @@ icon_align = 1
 [connection signal="pressed" from="Play Again" to="." method="_on_Play_Again_pressed"]
 [connection signal="pressed" from="Main Menu" to="." method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="Quit Game" to="." method="_on_Quit_Game_pressed"]
+=======
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -8.0
+margin_top = -48.0
+margin_right = 1032.0
+margin_bottom = 648.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="PlayButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 424.0
+margin_top = 176.0
+margin_right = 1801.0
+margin_bottom = 1045.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="PlayButton"]
+margin_left = 128.0
+margin_top = 106.667
+margin_right = 206.0
+margin_bottom = 120.667
+rect_scale = Vector2( 15, 61 )
+text = "PLAY AGAIN"
+
+[node name="QuitButton" type="TextureButton" parent="."]
+margin_left = 424.0
+margin_top = 416.0
+margin_right = 1801.0
+margin_bottom = 1285.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="QuitButton"]
+margin_left = 192.0
+margin_right = 225.0
+margin_bottom = 14.0
+rect_scale = Vector2( 30, 61 )
+text = "QUIT"
+
+[node name="MainMenuButton" type="TextureButton" parent="."]
+margin_left = 424.0
+margin_top = 288.0
+margin_right = 1801.0
+margin_bottom = 1157.0
+rect_scale = Vector2( 0.125, 0.075 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="MainMenuButton"]
+margin_left = 192.0
+margin_right = 225.0
+margin_bottom = 14.0
+rect_scale = Vector2( 12.5, 61 )
+text = "MAIN MENU"
+
+[node name="Title Bar" type="TextureRect" parent="."]
+margin_left = 344.0
+margin_right = 1721.0
+margin_bottom = 869.0
+rect_scale = Vector2( 0.25, 0.125 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Title Bar"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 146.0
+margin_bottom = 78.0
+rect_scale = Vector2( 28, 61 )
+text = "FELLED"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+>>>>>>> c65d46aa6fbc77c295be739cf3c6bf3077306a6e
