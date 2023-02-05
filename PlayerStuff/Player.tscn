@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=21 format=2]
+=======
+<<<<<<< Updated upstream
+[gd_scene load_steps=17 format=2]
+=======
+[gd_scene load_steps=25 format=2]
+>>>>>>> Stashed changes
+>>>>>>> map_branch
 
 [ext_resource path="res://PlayerStuff/player.gd" type="Script" id=1]
 [ext_resource path="res://PlayerStuff/cam.gd" type="Script" id=2]
@@ -10,8 +18,18 @@
 [ext_resource path="res://PlayerStuff/weedWhackerRelease.wav" type="AudioStream" id=8]
 [ext_resource path="res://PlayerStuff/weedWhackerAttack.wav" type="AudioStream" id=9]
 [ext_resource path="res://PlayerStuff/grass_step.wav" type="AudioStream" id=10]
+<<<<<<< HEAD
 [ext_resource path="res://PlayerStuff/hurted.wav" type="AudioStream" id=11]
 [ext_resource path="res://PlayerStuff/wood_particle.png" type="Texture" id=12]
+=======
+<<<<<<< Updated upstream
+=======
+[ext_resource path="res://PlayerStuff/hurted.wav" type="AudioStream" id=11]
+[ext_resource path="res://PlayerStuff/wood_particle.png" type="Texture" id=12]
+[ext_resource path="res://PlayerStuff/kild.wav" type="AudioStream" id=13]
+[ext_resource path="res://PlayerStuff/hands.png" type="Texture" id=14]
+>>>>>>> Stashed changes
+>>>>>>> map_branch
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
@@ -33,6 +51,11 @@ albedo_texture = ExtResource( 6 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 2, 1, 1 )
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> map_branch
 [sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 params_billboard_mode = 3
@@ -43,6 +66,18 @@ albedo_texture = ExtResource( 12 )
 
 [sub_resource type="QuadMesh" id=8]
 
+<<<<<<< HEAD
+=======
+[sub_resource type="QuadMesh" id=9]
+size = Vector2( 6, 5 )
+
+[sub_resource type="SpatialMaterial" id=10]
+render_priority = 1
+flags_transparent = true
+albedo_texture = ExtResource( 14 )
+
+>>>>>>> Stashed changes
+>>>>>>> map_branch
 [node name="Player" type="KinematicBody" groups=["player"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 script = ExtResource( 1 )
@@ -61,7 +96,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -1, 0 )
 
 [node name="weed" type="MeshInstance" parent="Camera/weapon"]
-transform = Transform( 4.37114e-09, -1.89276e-07, -1, -0.173205, -2.5, 0, -0.1, 4.33013, -4.37114e-08, 1, 1.2568, -2.02989 )
+transform = Transform( 0.00151577, 0.141423, -0.999571, -0.173189, -2.49854, -0.0207058, -0.100016, 4.32867, 0.0207058, 1.05653, 1.2568, -2.02989 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 4 )
@@ -84,6 +119,11 @@ material/0 = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 0.377146, -0.926155, 0, 0.926155, 0.377146, 1, 3.13312, -3.86688 )
 shape = SubResource( 3 )
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> map_branch
 [node name="CPUParticles" type="CPUParticles" parent="Camera/weapon/AttackArea"]
 transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 2.41074, -4.53206 )
 material_override = SubResource( 7 )
@@ -95,6 +135,16 @@ spread = 20.0
 initial_velocity = 15.0
 initial_velocity_random = 0.68
 
+<<<<<<< HEAD
+=======
+[node name="MeshInstance" type="MeshInstance" parent="Camera/weapon"]
+transform = Transform( 1, 0, 0, 0, 0.982726, 0.185066, 0, -0.185066, 0.982726, 0.0995589, 1.02526, -2.51332 )
+layers = 2
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+>>>>>>> Stashed changes
+>>>>>>> map_branch
 [node name="HurtIndication" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -103,20 +153,39 @@ color = Color( 0.678431, 0.00784314, 0.00784314, 1 )
 
 [node name="weedWhackerIdle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -25.0
 
 [node name="weedWhackerAttack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -20.0
 
 [node name="weedWhackerSustain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -20.0
 
 [node name="weedWhackerRelease" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -20.0
 
 [node name="stepSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -3.0
 
+<<<<<<< HEAD
 [node name="hurted" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
+=======
+<<<<<<< Updated upstream
+=======
+[node name="hurted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
+
+[node name="kild" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 5.0
+
+>>>>>>> Stashed changes
+>>>>>>> map_branch
 [connection signal="finished" from="weedWhackerSustain" to="." method="_on_weedWhackerSustain_finished"]
