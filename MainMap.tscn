@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 [gd_scene load_steps=82 format=2]
+=======
+[gd_scene load_steps=60 format=2]
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [ext_resource path="res://Map Textures/window1.png" type="Texture" id=1]
 [ext_resource path="res://Map Textures/grass.png" type="Texture" id=2]
@@ -20,12 +24,6 @@
 [ext_resource path="res://Map Textures/belt.png" type="Texture" id=15]
 [ext_resource path="res://Map Textures/sky1.png" type="Texture" id=16]
 [ext_resource path="res://BeaveHouse.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Map Textures/lumberyard_label.png" type="Texture" id=18]
-[ext_resource path="res://Map Textures/window2.png" type="Texture" id=19]
-[ext_resource path="res://dumpster.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Map Textures/forrest_barrier.png" type="Texture" id=21]
-[ext_resource path="res://Map Textures/tree.png" type="Texture" id=22]
-[ext_resource path="res://Map Textures/dead_tree.png" type="Texture" id=23]
 
 [sub_resource type="PanoramaSky" id=57]
 panorama = ExtResource( 16 )
@@ -64,11 +62,17 @@ extents = Vector3( 1, 1, 1.2088 )
 [sub_resource type="SpatialMaterial" id=51]
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=76]
-flags_transparent = true
-albedo_texture = ExtResource( 21 )
-uv1_scale = Vector3( 3.028, 1.028, 0.878 )
-uv1_offset = Vector3( 0, 0.233, 0 )
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=12]
 
@@ -123,6 +127,7 @@ albedo_texture = ExtResource( 14 )
 flags_transparent = true
 albedo_texture = ExtResource( 15 )
 
+<<<<<<< HEAD
 [sub_resource type="SpatialMaterial" id=72]
 albedo_texture = ExtResource( 19 )
 
@@ -135,6 +140,8 @@ albedo_texture = ExtResource( 18 )
 
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 381f34e (Basic Objects Added)
 [sub_resource type="BoxShape" id=19]
 
 [sub_resource type="BoxShape" id=20]
@@ -156,73 +163,11 @@ albedo_texture = ExtResource( 9 )
 [sub_resource type="SpatialMaterial" id=32]
 albedo_texture = ExtResource( 9 )
 
-[sub_resource type="SpatialMaterial" id=60]
-albedo_color = Color( 0.894118, 0.0313726, 0.945098, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=61]
-albedo_color = Color( 0.12549, 0.462745, 0.0313726, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=62]
-albedo_color = Color( 0.760784, 0.0352941, 0.0352941, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=63]
-albedo_color = Color( 0.25098, 0.219608, 0.619608, 1 )
-albedo_texture = ExtResource( 11 )
-
 [sub_resource type="SpatialMaterial" id=33]
 albedo_color = Color( 0.0509804, 0.682353, 0.956863, 1 )
 albedo_texture = ExtResource( 11 )
 
-[sub_resource type="SpatialMaterial" id=64]
-albedo_color = Color( 0.890196, 0.517647, 0.0352941, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=65]
-albedo_color = Color( 1, 0, 0.843137, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=68]
-albedo_color = Color( 0.160784, 0.913725, 0.403922, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=69]
-albedo_color = Color( 0.733333, 0.380392, 0.380392, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=70]
-albedo_color = Color( 0.372549, 0.364706, 0.196078, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=71]
-albedo_color = Color( 0.764706, 0.643137, 0.560784, 1 )
-albedo_texture = ExtResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=66]
-albedo_color = Color( 0.917647, 0.905882, 0.137255, 1 )
-albedo_texture = ExtResource( 11 )
-
 [sub_resource type="BoxShape" id=59]
-
-[sub_resource type="BoxShape" id=75]
-
-[sub_resource type="CylinderShape" id=80]
-
-[sub_resource type="QuadMesh" id=78]
-
-[sub_resource type="SpatialMaterial" id=79]
-flags_transparent = true
-params_billboard_mode = 2
-params_billboard_keep_scale = true
-albedo_texture = ExtResource( 22 )
-
-[sub_resource type="SpatialMaterial" id=81]
-flags_transparent = true
-params_billboard_mode = 2
-params_billboard_keep_scale = true
-albedo_texture = ExtResource( 23 )
 
 [node name="Spatial" type="WorldEnvironment"]
 environment = SubResource( 58 )
@@ -291,8 +236,8 @@ transform = Transform( 250.92, 0, 0, 0, 23.3695, 0, 0, 0, 10.9368, 0, 12, 285 )
 shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Wall1/CollisionShape"]
-transform = Transform( -1, 8.14214e-09, 0, -9.38664e-07, -1, 0, 0, 0, 1.2, 0, 0, 0 )
-material = SubResource( 76 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0 )
+material = SubResource( 9 )
 
 [node name="Wall2" type="StaticBody" parent="."]
 transform = Transform( -5.48403e-06, 0, 10.9368, 0, 23.3695, 0, -301.104, 0, -1.14735e-06, -234.918, 14.1647, -9.40819 )
@@ -301,8 +246,8 @@ transform = Transform( -5.48403e-06, 0, 10.9368, 0, 23.3695, 0, -301.104, 0, -1.
 shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Wall2/CollisionShape"]
-transform = Transform( 1, 0, 4.44089e-16, 0, 1, 0, 5.68434e-14, 0, 1.2, 0, -0.171163, 0 )
-material = SubResource( 76 )
+transform = Transform( 1, 0, 4.44089e-16, 0, 1, 0, 5.68434e-14, 0, 1.2, 0, 0, 0 )
+material = SubResource( 10 )
 
 [node name="Wall3" type="StaticBody" parent="."]
 transform = Transform( 238.374, 0, 0, 0, 23.3695, 0, 0, 0, 10.9368, 11, 12, -293 )
@@ -312,7 +257,7 @@ shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Wall3/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0 )
-material = SubResource( 76 )
+material = SubResource( 8 )
 
 [node name="Wall4" type="StaticBody" parent="."]
 transform = Transform( -5.48403e-06, 0, -10.9368, 0, 23.3695, 0, 288.558, 0, -1.09954e-06, 236, 12, -2 )
@@ -322,7 +267,7 @@ shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Wall4/CollisionShape"]
 transform = Transform( 1, 0, -4.44089e-16, 0, 1, 0, -5.68434e-14, 0, 1.2, 0, 0, 0 )
-material = SubResource( 76 )
+material = SubResource( 11 )
 
 [node name="BeaveHouse" type="StaticBody" parent="."]
 
@@ -346,7 +291,7 @@ transform = Transform( 11.7, 0, 0, 0, 0.48, 0, 0, 0, 194.201, 171, 0, -33 )
 material = SubResource( 54 )
 
 [node name="Road2" type="CSGBox" parent="."]
-transform = Transform( -4.18073e-07, 0, -158.754, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -215.417 )
+transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -215.417 )
 material = SubResource( 54 )
 
 [node name="Road3" type="CSGBox" parent="."]
@@ -366,7 +311,7 @@ transform = Transform( -1.98841e-07, 0, -75.5055, 0, 0.48, 0, 11.7, 0, -8.48881e
 material = SubResource( 54 )
 
 [node name="Road7" type="CSGBox" parent="."]
-transform = Transform( -4.24178e-07, 0, -161.072, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -127 )
+transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -127 )
 material = SubResource( 54 )
 
 [node name="LumberYard" type="StaticBody" parent="."]
@@ -420,50 +365,19 @@ transform = Transform( -1.31134e-08, 0, -1, 0, 0.6, 0, 0.3, 0, -4.37114e-08, -1.
 mesh = SubResource( 49 )
 material/0 = SubResource( 52 )
 
-[node name="WallHole" type="MeshInstance" parent="LumberYard"]
+[node name="Window3" type="MeshInstance" parent="LumberYard"]
 transform = Transform( -2.18557e-08, 0, -1, 0, 0.6, 0, 0.5, 0, -4.37114e-08, -1.12348, 0.309587, -0.0691438 )
 mesh = SubResource( 49 )
 material/0 = SubResource( 53 )
 
-[node name="WallBox" type="CSGBox" parent="LumberYard"]
+[node name="CSGBox" type="CSGBox" parent="LumberYard"]
 transform = Transform( 0.112785, 0, 0, 0, 0.376455, 0, 0, 0, 0.280567, -1.00977, 0.308151, -0.0500932 )
 depth = 3.19287
 material = SubResource( 55 )
 
-[node name="Belt" type="CSGBox" parent="LumberYard"]
+[node name="CSGBox2" type="CSGBox" parent="LumberYard"]
 transform = Transform( 0.000659673, -7.46653e-09, 1.02347, -0.00557641, -4.53159e-09, 0.621166, 0, -0.166897, -4.37114e-08, -2.07933, -0.400122, 0 )
-visible = false
 material = SubResource( 56 )
-
-[node name="Window3" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -0.16566, 0, 6.78488e-08, 0, 0.6, 0, -3.6861e-08, 0, -1.81094, -0.785707, 1.12559, -0.904057 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 50 )
-
-[node name="Window4" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -0.16566, 0, 6.78488e-08, 0, 0.6, 0, -3.6861e-08, 0, -1.81094, -0.394176, 1.12559, -0.904057 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 72 )
-
-[node name="Window5" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -0.16566, 0, 6.78488e-08, 0, 0.6, 0, -3.6861e-08, 0, -1.81094, -0.381691, -0.0298439, -0.904057 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 50 )
-
-[node name="Window6" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -0.16566, 0, 6.78488e-08, 0, 0.6, 0, -3.6861e-08, 0, -1.81094, -0.793717, -0.054731, -0.904057 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 73 )
-
-[node name="Label 1" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -1.82321, 0, 7.46726e-07, 0, 1.7451, 0, -3.6861e-08, 0, -1.81094, 0.853978, 0.441344, -0.904057 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 74 )
-
-[node name="Label 2" type="MeshInstance" parent="LumberYard"]
-transform = Transform( 1.96814, 0, -7.11712e-07, 0, 1.54664, 0, -2.51785e-07, 0, 1.81094, 0.00605893, 0.7241, 2.16838 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 74 )
 
 [node name="Building1" type="StaticBody" parent="."]
 transform = Transform( 25.308, 0, 0, 0, 53.1966, 0, 0, 0, 25.7711, -197.145, 50.8114, -252.643 )
@@ -594,6 +508,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 4.76837e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49692, -7.41898, 0 )
 material = SubResource( 60 )
@@ -612,6 +527,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 139.378, 2.20672, -74.8861 )
@@ -653,6 +572,7 @@ shape = SubResource( 18 )
 [node name="CSGBox" type="CSGBox" parent="Market Stall2/Roof"]
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 0, 0, 7.83842, 0, -5.21541e-08, 0, 1, 1.49744, -7.18242, -1.71661e-05 )
+<<<<<<< HEAD
 material = SubResource( 61 )
 =======
 transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
@@ -669,6 +589,9 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall2/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall3" type="StaticBody" parent="."]
 transform = Transform( 0.929886, 0, -0.367849, 0, 1, 0, 0.367849, 0, 0.929886, 137.903, 2.20672, -60.7683 )
@@ -708,6 +631,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall3/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -5.96046e-08, 0, 1, 1.49688, -7.41898, 0 )
 material = SubResource( 62 )
@@ -726,6 +650,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall3/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall4" type="StaticBody" parent="."]
 transform = Transform( 0.867323, 0, 0.497746, 0, 1, 0, -0.497746, 0, 0.867323, 134.747, 2.20672, -86.3293 )
@@ -767,6 +695,7 @@ shape = SubResource( 18 )
 [node name="CSGBox" type="CSGBox" parent="Market Stall4/Roof"]
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+<<<<<<< HEAD
 material = SubResource( 63 )
 =======
 transform = Transform( 2.28281, 0, 3.87045e-08, 0, 1, 0, -5.64145e-08, 0, 1, 1.49689, 0, 0 )
@@ -783,6 +712,9 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall4/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall5" type="StaticBody" parent="."]
 transform = Transform( -0.394263, 0, -0.918998, 0, 1, 0, 0.918998, 0, -0.394263, 91.6535, 2.20672, -46.9247 )
@@ -874,6 +806,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall6/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 0, 0, 7.83842, 0, -5.21541e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 64 )
@@ -892,6 +825,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall6/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall7" type="StaticBody" parent="."]
 transform = Transform( -0.0440379, 0, 0.99903, 0, 1, 0, -0.99903, 0, -0.0440379, 127.79, 2.20672, -93.983 )
@@ -931,6 +868,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall7/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49687, -7.41898, 9.53674e-07 )
 material = SubResource( 65 )
@@ -949,6 +887,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall7/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall8" type="StaticBody" parent="."]
 transform = Transform( -0.15321, 0, -0.988194, 0, 1, 0, 0.988194, 0, -0.15321, 122.401, 2.20672, -46.6531 )
@@ -988,6 +930,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall8/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 1.19209e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49689, -7.41898, 9.53674e-07 )
 material = SubResource( 68 )
@@ -1006,6 +949,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall8/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall9" type="StaticBody" parent="."]
 transform = Transform( 0.441913, 0, -0.897058, 0, 1, 0, 0.897058, 0, 0.441913, 113.648, 2.20672, -48.0101 )
@@ -1045,6 +992,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall9/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -3.72529e-08, 0, 1, 1.49687, -7.41898, -9.53674e-07 )
 material = SubResource( 69 )
@@ -1063,6 +1011,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall9/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall10" type="StaticBody" parent="."]
 transform = Transform( 0.379117, 0, 0.925349, 0, 1, 0, -0.925349, 0, 0.379117, 117.001, 2.20672, -97.4863 )
@@ -1206,6 +1158,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall12/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 70 )
@@ -1224,6 +1177,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall12/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall13" type="StaticBody" parent="."]
 transform = Transform( -0.866287, 0, 0.499547, 0, 1, 0, -0.499547, 0, -0.866287, 82.5324, 2.20672, -88.2549 )
@@ -1263,6 +1220,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall13/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -3.72529e-08, 0, 1, 1.49689, -7.41898, 0 )
 material = SubResource( 71 )
@@ -1281,6 +1239,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall13/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall14" type="StaticBody" parent="."]
 transform = Transform( 0.10675, 0, 0.994286, 0, 1, 0, -0.994286, 0, 0.10675, 88.3237, 2.20672, -94.235 )
@@ -1372,6 +1334,7 @@ transform = Transform( 0.4, 0, 1.20687e-08, 0, 0.0410497, 0, 1.42971e-07, 0, 3.2
 shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="Market Stall15/Roof"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49687, -7.41898, 0 )
 material = SubResource( 66 )
@@ -1390,6 +1353,10 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall15/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
+material = SubResource( 33 )
+>>>>>>> parent of 381f34e (Basic Objects Added)
 
 [node name="Market Stall16" type="StaticBody" parent="."]
 transform = Transform( -0.974714, 0, -0.223454, 0, 1, 0, 0.223454, 0, -0.974714, 75.2268, 2.20672, -67.2004 )
@@ -1472,6 +1439,7 @@ shape = SubResource( 18 )
 transform = Transform( 1.28, 4.75862e-21, 2.79839e-08, -1.86556e-15, 1.2, 5.40741e-16, 9.17737e-08, 1.97148e-13, 2.43936, -0.618277, 0.929881, 1.20852 )
 polygon = PoolVector2Array( -0.5, 0, 0.5, 0.25, 1.5, 0 )
 material = SubResource( 24 )
+<<<<<<< HEAD
 
 [node name="Dumpster1" type="StaticBody" parent="."]
 transform = Transform( -1, 0, -1.74846e-07, 0, 1, 0, 8.74228e-08, 0, -2, -60.9674, 1.28989, -201 )
@@ -1655,3 +1623,5 @@ transform = Transform( 2.13173, 3.80966e-10, 6.43179e-08, 3.64362e-07, -4.57286e
 [node name="CSGBox7" type="CSGBox" parent="Market Stall18/Roof"]
 transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e-08, 2.6846e-07, 4.39772e-08, 5.69916e-09, 1, 3.64165, -8.81337, 0 )
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 381f34e (Basic Objects Added)
