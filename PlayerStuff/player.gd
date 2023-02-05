@@ -1,9 +1,7 @@
 extends KinematicBody
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var kil_part = preload("res://PlayerStuff/juice.tscn")
 var input
 var speed = 10
 var velocity = Vector3.ZERO
@@ -29,7 +27,7 @@ func _process(delta):
 	inv_timer = clamp(inv_timer - delta, 0, inv_time)
 	
 	if Input.get_action_strength("ui_accept"):
-		speed = 20
+		speed = 30
 	else:
 		speed = 10
 	input = Vector3(Input.get_axis("ui_left", "ui_right"), -0.1, Input.get_axis("ui_up", "ui_down"))
@@ -54,8 +52,12 @@ func _process(delta):
 				$Camera/weapon/AttackArea/CPUParticles.set_emitting(true)
 				enemy.health -= delta * damage
 				if enemy.health <= 0:
-					enemy.queue_free()
+					var temp = kil_part.instance()
+					get_tree().get_root().add_child(temp)
+					temp.global_transform.origin = enemy.global_transform.origin
+					enemy.call_deferred("queue_free")
 					health = clamp(health + 50, 0, max_health)
+					$kild.play()
 	else:
 		if rev_step == 3 or rev_step == 2:
 			$weedWhackerSustain.stop()

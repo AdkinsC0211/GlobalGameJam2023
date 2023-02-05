@@ -19,7 +19,7 @@ func _ready():
 
 
 func _on_PlayButton_pressed():
-	get_tree().change_scene("res://PlayerSpawnTest.tscn")
+	get_tree().change_scene("res://MainMap.tscn")
 
 	
 
