@@ -77,6 +77,6 @@ margin_bottom = 78.0
 rect_scale = Vector2( 15, 61 )
 text = "ROOT FORCE"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

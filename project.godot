@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Global Game Jam 2023"
-run/main_scene="res://DavidsStash/TitleSceen.tscn"
+run/main_scene="res://DavidsStash/TitleScreen2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
