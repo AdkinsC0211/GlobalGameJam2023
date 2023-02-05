@@ -1,15 +1,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 [gd_scene load_steps=82 format=2]
 =======
 [gd_scene load_steps=60 format=2]
 >>>>>>> parent of 381f34e (Basic Objects Added)
+=======
+[gd_scene load_steps=43 format=2]
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 
-[ext_resource path="res://Map Textures/window1.png" type="Texture" id=1]
-[ext_resource path="res://Map Textures/grass.png" type="Texture" id=2]
-[ext_resource path="res://Map Textures/hole.png" type="Texture" id=3]
 [ext_resource path="res://grocery_store.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map Textures/generic_wall.png" type="Texture" id=6]
@@ -18,6 +19,7 @@
 [ext_resource path="res://Map Textures/pole.png" type="Texture" id=9]
 [ext_resource path="res://Map Textures/base.png" type="Texture" id=10]
 [ext_resource path="res://Map Textures/cloth_drape.png" type="Texture" id=11]
+<<<<<<< HEAD
 [ext_resource path="res://Map Textures/window3.png" type="Texture" id=12]
 [ext_resource path="res://Map Textures/grav_path.png" type="Texture" id=13]
 [ext_resource path="res://Map Textures/steel.png" type="Texture" id=14]
@@ -55,12 +57,13 @@ material = SubResource( 4 )
 [sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.613861, 0.756818 ), -1.56091, 0.0, 0, 0, Vector2( 0.990099, 0 ), -2.73458, 0.0, 0, 0 ]
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1, 1, 1.2088 )
 
-[sub_resource type="SpatialMaterial" id=51]
-albedo_texture = ExtResource( 2 )
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.0117647, 0.313726, 0.0784314, 1 )
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -82,11 +85,11 @@ albedo_color = Color( 0.247059, 0.141176, 0.113725, 1 )
 [sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=54]
-flags_transparent = true
-albedo_texture = ExtResource( 13 )
-uv1_scale = Vector3( 11.985, 1, 1 )
-uv1_offset = Vector3( -1.072, 0, 0 )
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 1, 0.890196, 0, 1 )
 
 [sub_resource type="BoxShape" id=18]
 
@@ -109,6 +112,7 @@ albedo_texture = ExtResource( 8 )
 [sub_resource type="SpatialMaterial" id=27]
 albedo_texture = ExtResource( 8 )
 
+<<<<<<< HEAD
 [sub_resource type="QuadMesh" id=49]
 
 [sub_resource type="SpatialMaterial" id=50]
@@ -142,6 +146,8 @@ albedo_texture = ExtResource( 18 )
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of 381f34e (Basic Objects Added)
+=======
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 [sub_resource type="BoxShape" id=19]
 
 [sub_resource type="BoxShape" id=20]
@@ -167,12 +173,10 @@ albedo_texture = ExtResource( 9 )
 albedo_color = Color( 0.0509804, 0.682353, 0.956863, 1 )
 albedo_texture = ExtResource( 11 )
 
-[sub_resource type="BoxShape" id=59]
-
-[node name="Spatial" type="WorldEnvironment"]
-environment = SubResource( 58 )
+[node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+<<<<<<< HEAD
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 138.312, 0.5, 246.309 )
 =======
 [node name="Spatial" type="Spatial"]
@@ -217,17 +221,19 @@ initial_velocity_random = 1.0
 scale_amount_curve = SubResource( 7 )
 color = Color( 0.729412, 0.509804, 0.109804, 0.988235 )
 >>>>>>> Stashed changes
+=======
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.135, 0.5, -130.927 )
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 
 [node name="WorldFloor" type="StaticBody" parent="."]
 transform = Transform( 250, 0, 0, 0, 0.4, 0, 0, 0, 250, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="WorldFloor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="WorldFloor/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0 )
-material = SubResource( 51 )
+material = SubResource( 13 )
 
 [node name="Wall1" type="StaticBody" parent="."]
 transform = Transform( 250.92, 0, 0, 0, 23.3695, 0, 0, 0, 10.9368, 0, 12, 285 )
@@ -240,7 +246,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0 )
 material = SubResource( 9 )
 
 [node name="Wall2" type="StaticBody" parent="."]
-transform = Transform( -5.48403e-06, 0, 10.9368, 0, 23.3695, 0, -301.104, 0, -1.14735e-06, -234.918, 14.1647, -9.40819 )
+transform = Transform( -5.48403e-06, 0, 10.9368, 0, 23.3695, 0, -301.104, 0, -1.14735e-06, -237, 12, -5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
 shape = SubResource( 1 )
@@ -288,31 +294,241 @@ height = 0.002
 
 [node name="Road" type="CSGBox" parent="."]
 transform = Transform( 11.7, 0, 0, 0, 0.48, 0, 0, 0, 194.201, 171, 0, -33 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road2" type="CSGBox" parent="."]
-transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -215.417 )
-material = SubResource( 54 )
+transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -216 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road2"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road3" type="CSGBox" parent="."]
 transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, 83 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road3"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road4" type="CSGBox" parent="."]
 transform = Transform( 11.7, 0, 0, 0, 0.48, 0, 0, 0, 104.674, 45, 0, -26 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road4"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road5" type="CSGBox" parent="."]
 transform = Transform( 11.7, 0, 0, 0, 0.48, 0, 0, 0, 149.535, -103, 0, -67 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road5"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road6" type="CSGBox" parent="."]
 transform = Transform( -1.98841e-07, 0, -75.5055, 0, 0.48, 0, 11.7, 0, -8.48881e-06, -23, 0, -20 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road6"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="Road7" type="CSGBox" parent="."]
 transform = Transform( -4.14253e-07, 0, -157.303, 0, 0.48, 0, 11.7, 0, -8.48881e-06, 2, 0, -127 )
-material = SubResource( 54 )
+material = SubResource( 16 )
+
+[node name="Line" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.911425 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line2" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.710603 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line3" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.499482 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line4" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.283211 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line5" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, 0.0617915 )
+visible = false
+material = SubResource( 17 )
+
+[node name="Line6" type="CSGBox" parent="Road7"]
+transform = Transform( 0.1, 0, 0, 0, 2, 0, 0, 0, 0.045, 0, 0, -0.159628 )
+visible = false
+material = SubResource( 17 )
 
 [node name="LumberYard" type="StaticBody" parent="."]
 transform = Transform( 28.3046, 0, 0, 0, 12.4962, 0, 0, 0, 15.6298, 100, 19, 117 )
@@ -355,30 +571,6 @@ shape = SubResource( 18 )
 
 [node name="CSGBox" type="CSGBox" parent="LumberYard/Stilt2"]
 
-[node name="Window1" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -1.31134e-08, 0, -1, 0, 0.6, 0, 0.3, 0, -4.37114e-08, -1.00617, 1.12559, -0.504677 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 50 )
-
-[node name="Window2" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -1.31134e-08, 0, -1, 0, 0.6, 0, 0.3, 0, -4.37114e-08, -1.00617, 1.12559, 0.421307 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 52 )
-
-[node name="Window3" type="MeshInstance" parent="LumberYard"]
-transform = Transform( -2.18557e-08, 0, -1, 0, 0.6, 0, 0.5, 0, -4.37114e-08, -1.12348, 0.309587, -0.0691438 )
-mesh = SubResource( 49 )
-material/0 = SubResource( 53 )
-
-[node name="CSGBox" type="CSGBox" parent="LumberYard"]
-transform = Transform( 0.112785, 0, 0, 0, 0.376455, 0, 0, 0, 0.280567, -1.00977, 0.308151, -0.0500932 )
-depth = 3.19287
-material = SubResource( 55 )
-
-[node name="CSGBox2" type="CSGBox" parent="LumberYard"]
-transform = Transform( 0.000659673, -7.46653e-09, 1.02347, -0.00557641, -4.53159e-09, 0.621166, 0, -0.166897, -4.37114e-08, -2.07933, -0.400122, 0 )
-material = SubResource( 56 )
-
 [node name="Building1" type="StaticBody" parent="."]
 transform = Transform( 25.308, 0, 0, 0, 53.1966, 0, 0, 0, 25.7711, -197.145, 50.8114, -252.643 )
 
@@ -410,7 +602,11 @@ transform = Transform( 29.792, 0, 0, 0, 24.7389, 0, 0, 0, 37.5644, 1.2283, 22.65
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building4/CollisionShape"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 material = SubResource( 39 )
 =======
 >>>>>>> Stashed changes
@@ -462,7 +658,11 @@ transform = Transform( 37.6586, 0, 0, 0, 19.8228, 0, 0, 0, 20.5561, -7.00625, 15
 shape = SubResource( 19 )
 
 [node name="CSGBox" type="CSGBox" parent="Building10/CollisionShape"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
 material = SubResource( 47 )
 =======
 >>>>>>> Stashed changes
@@ -1399,6 +1599,7 @@ shape = SubResource( 18 )
 <<<<<<< Updated upstream
 transform = Transform( 2.28281, 0, 2.38419e-07, 0, 7.83842, 0, -4.47035e-08, 0, 1, 1.49688, -7.41898, 0 )
 material = SubResource( 33 )
+<<<<<<< HEAD
 
 [node name="BeaveHouse" type="StaticBody" parent="."]
 transform = Transform( 6.39103, 0, 0, 0, 4.46848, 0, 0, 0, 8.78919, 193.721, 4.66272, 246 )
@@ -1625,3 +1826,5 @@ transform = Transform( -1.26008e-07, -0.129593, -3.01716e-08, 8.89776, -1.74846e
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of 381f34e (Basic Objects Added)
+=======
+>>>>>>> parent of 777c26c (Unique Textured Buildings)
